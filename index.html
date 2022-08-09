@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women of Marvel</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="brand">Women of Marvel</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="#">Home</a>
+        <a href="#">Character Roster</a>
+        <a href="#">Timeline</a>
+        <a href="#">Quizzes</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <img class="video-slide active" src="https://qph.cf2.quoracdn.net/main-qimg-07404865fb2cd563c408d3a77a55fd4c">
+    <img class="video-slide active" src="https://i.pinimg.com/originals/01/66/f4/0166f490d7b7f98fad964d4440c0eabf.gif">
+    <img class="video-slide active" src="https://64.media.tumblr.com/b494e3bde770384c03b344919222ec35/tumblr_pkxavoBPMx1r273ruo2_540.gifv">
+    <img class="video-slide active" src="https://64.media.tumblr.com/7016bb589a23fc6081e87b06191dd2b8/065694075be0171e-9a/s540x810/2814875b846da9263677f2dbfa45876b7002d365.gifv">
+    <img class="video-slide active" src="https://i.gifer.com/fynq.gif">
+    <div class="content active">
+      <h1>Wanda Maximoff<br><span>Scarlet Witch</span></h1>
+      <p>“You break the rules and become a hero, I do it and I become the enemy. That doesn’t seem fair.”</p>
+      <a href="Wanda.html">View Profile</a>
+    </div>
+    <div class="content">
+      <h1>Natasha Romanoff<br><span>Black Widow</span></h1>
+      <p>“I'm always picking up after you boys...”</p>
+      <a href="Natasha.html">View Profile</a>
+    </div>
+    <div class="content">
+      <h1>May Parker<br><span>Aunt May</span></h1>
+      <p>“With great power, there must also come great responsibility.”</p>
+      <a href="May.html">View Profile</a>
+    </div>
+    <div class="content">
+      <h1>Kate Bishop<br><span>Hawkeye</span></h1>
+      <p>“Look, I know it doesn't look like that right now, but you'd be lost without me. You realize that?”</p>
+      <a href="Kate.html">View Profile</a>
+    </div>
+    <div class="content">
+      <h1>Carol Danvers<br><span>Captain Marvel</span></h1>
+      <p>“I am coming to end it. The war, the lies, all of it.”</p>
+      <a href="Carol.html">View Profile</a>
+    </div>
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function (manual) {
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
